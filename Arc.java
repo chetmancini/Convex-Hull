@@ -13,18 +13,22 @@ public class Arc{
      * The x coordinate
      */
     private double x;
+
     /**
      * The y coordinate
      */
     private double y;
+
     /**
      * The radius.
      */
     private int r;
+
     /**
      * The first angle.
      */
     private double angle1;
+
     /**
      * The second angle.
      */
@@ -46,14 +50,23 @@ public class Arc{
         this.angle2 = angle2;
     }
 
+    /**
+     * Getter method for x.
+     */
     public double getX(){
         return x;
     }
 
+    /**
+     * Getter method for y.
+     */
     public double getY(){
         return y;
     }
 
+    /**
+     * Getter method for radius.
+     */
     public int getR(){
         return r;
     }

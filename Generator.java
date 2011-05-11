@@ -14,6 +14,7 @@ import java.util.Vector;
  * Dec 4, 2008
  */
 public class Generator {
+
     /**
      * Generate a random set of vertices.
      * @param num the number of vertices.

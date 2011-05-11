@@ -18,6 +18,7 @@ public class JarvisMarch extends Algorithm{
      * A vector of vertices to pull from creating the hull.  Initially a copy of vertices from the graph.
      */
     Vector<Vertex> copy = new Vector<Vertex>();
+
     /**
      * A vector of vertices making up the convex hull.
      */
@@ -65,6 +66,7 @@ public class JarvisMarch extends Algorithm{
         }
         return toReturn;
     }
+
     /**
      * Get the next vertex going down the left side of the convex hull
      * 

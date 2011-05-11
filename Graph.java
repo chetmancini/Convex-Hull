@@ -19,22 +19,27 @@ import java.util.Vector;
 public class Graph{
 
     private static Graph graph;
+
     /**
      * Reference to the pane.
      */
     private Draw pane = Draw.getInstance();
+
     /**
      * Vector of verticies
      */
     public Vector<Vertex> vertices;
+
     /**
      * Vector of edges
      */
     public Vector<Edge> edges;
+
     /**
      * Vector of arcs
      */
     public Vector<Arc> arcs;
+
     /**
      * Vector of mini edges that go with the arcs.
      */
@@ -78,6 +83,7 @@ public class Graph{
         vertices.add(toAdd);
         pane.point(toAdd.getX(), toAdd.getY(), toAdd.getName());
     }
+
     /**
      * Add an edge to the graph but don't display it.
      * @param toAdd the edge to add.
@@ -87,6 +93,7 @@ public class Graph{
         pane.setPenRadius(.005);
         pane.lineNoShow(toAdd.getFirst().getX(), toAdd.getFirst().getY(), toAdd.getSecond().getX(), toAdd.getSecond().getY());
     }
+
     /**
      * Add an edge to the graph and display it.
      * @param toAdd the edge to add.
@@ -96,6 +103,7 @@ public class Graph{
         pane.setPenRadius(.005);
         pane.line(toAdd.getFirst().getX(), toAdd.getFirst().getY(), toAdd.getSecond().getX(), toAdd.getSecond().getY());
     }
+
     /**
      * Add an arc.
      * @param toAdd the arc to add.
@@ -116,6 +124,7 @@ public class Graph{
         pane.setPenRadius(.002);
         pane.arc(toAdd.getX(), toAdd.getY(), toAdd.getR(), toAdd.getAngle1(), toAdd.getAngle2());
     }
+
     /**
      * Add an arc.
      * @param x the x coordinate
@@ -128,6 +137,7 @@ public class Graph{
         Arc toAdd = new Arc(x, y, r, angle1, angle2);
         addArc(toAdd);
     }
+
     /**
      * Draw a line on the graph, but don't add the edge.
      * @param first one end vertex.
@@ -137,6 +147,7 @@ public class Graph{
         pane.setPenRadius(.005);
         pane.line(first.getX(), first.getY(), second.getX(), second.getY());
     }
+
     /**
      * Draw a line on the graph, but don't add the edge to the data structure.
      * @param toWrite the edge to write out.
@@ -169,6 +180,7 @@ public class Graph{
             vertices.insertElementAt(toInsert, i);
         }
     }
+
     /**
      * Label the vertices on the graph P1 through Pn, where is is the number of vertices - 1.
      */
@@ -181,6 +193,7 @@ public class Graph{
         drawVertices();
         pane.show();
     }
+
     /**
      * Get the vertex with the lowest y coordinate.
      * @return the vertex with the lowest y coordinate.
@@ -188,6 +201,7 @@ public class Graph{
     public Vertex lowest(){
         return vertices.firstElement();
     }
+
     /**
      * Set the vertices of the graph to a given set.
      * @param vertices the vertices to set as the current set.
@@ -195,6 +209,7 @@ public class Graph{
     public void setVertices(Vector<Vertex> vertices){
         this.vertices = vertices;
     }
+
     /**
      * Display all the vertices currently in the data structure.
      */
@@ -218,6 +233,7 @@ public class Graph{
             pane.lineNoShow(toAdd.getFirst().getX(), toAdd.getFirst().getY(), toAdd.getSecond().getX(), toAdd.getSecond().getY());
         }
     }
+
     /**
      * Display all the arcs currently in the data structure.
      */
@@ -228,6 +244,7 @@ public class Graph{
             pane.arcNoShow(toAdd.getX(), toAdd.getY(), toAdd.getR(), toAdd.getAngle1(), toAdd.getAngle2());
         }
     }
+
     /**
      * Display all the mini edges that go with the arcs in the data structure.
      */

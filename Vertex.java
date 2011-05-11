@@ -12,14 +12,17 @@ import java.awt.geom.Point2D;
  * Dec 4, 2008
  */
 public class Vertex extends Point2D implements Comparable<Vertex>{
+
     /**
      * The x coordinate of the vertex.
      */
     private double x;
+
     /**
      * The y coordinate of the vertex.
      */
     private double y;
+
     /**
      * The name of the vertex.
      */
@@ -92,6 +95,7 @@ public class Vertex extends Point2D implements Comparable<Vertex>{
     public void setName(String name){
         this.name = name;
     }
+
     /**
      * Get the vertex name.
      * @return the Vertex name.

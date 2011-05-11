@@ -1,6 +1,7 @@
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  * Algorithm.java
  * 
@@ -32,6 +33,7 @@ public abstract class Algorithm {
         }
         
     }
+
     /**
      * Pause for a given number of milliseconds.
      * @param millis the number of milliseconds to pause for.
@@ -43,6 +45,7 @@ public abstract class Algorithm {
             Logger.getLogger(Algorithm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     /**
      * Run the algorithm.
      */

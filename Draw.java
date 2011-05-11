@@ -32,66 +32,82 @@ public class Draw implements ActionListener{
      * Draw is a singleton.  This is the instance.
      */
     private static Draw instance = null;
+
     /**
      * The default pen color for drawing.
      */
     public final Color DEFAULT_PEN_COLOR = Color.BLACK;
+
     /**
      * The default background color.
      */
     public final Color DEFAULT_CLEAR_COLOR = Color.WHITE;
+
     /**
      * The current pen color.
      */
     private Color penColor;
+
     /**
      * The default dimensions for the window.
      */
     private static final int DEFAULT_SIZE = 512;
+
     /**
      * The default width.
      */
     private int width = DEFAULT_SIZE;
+
     /**
      * The default height.
      */
     private int height = DEFAULT_SIZE;
+
     /**
      * The default pen radius.
      */
     private static final double DEFAULT_PEN_RADIUS = 0.002;
+
     /**
      * The current pen radius.
      */
     private double penRadius;
+
     /**
      * Draw immediately or wait for show?
      */
     private boolean defer = false;
+
     /**
      * Coordinate min-max values
      */
     private double xmin,  ymin,  xmax,  ymax;
+
     /**
      * The default font for text.
      */
     private static final Font DEFAULT_FONT = new Font("Serif", Font.PLAIN, 14);
+
     /**
      * The current fond.
      */
     private Font font;
+
     /**
      * Double buffered images.
      */
     private final BufferedImage offscreenImage,  onscreenImage;
+
     /**
      * Double buffered graphics.
      */
     private final Graphics2D offscreen,  onscreen;    // the frame for drawing to the screen
+
     /**
      * The frame for drawing on screen.
      */
-    private JFrame frame = new JFrame();    // the 
+    private JFrame frame = new JFrame();
+
     /**
      * The label to draw in.
      */
@@ -159,6 +175,7 @@ public class Draw implements ActionListener{
         frame.setVisible(true);
         clear();
     }
+
     /**
      * Create the menu bar
      * @return the window's menu bar

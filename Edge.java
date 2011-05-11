@@ -9,10 +9,12 @@
  * Dec 4, 2008
  */
 public class Edge {
+
     /**
      * One end of the vertex.
      */
     private Vertex vertex1;
+
     /**
      * the other vertex end.
      */

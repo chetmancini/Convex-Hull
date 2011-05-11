@@ -18,6 +18,7 @@ public class GrahamScan extends Algorithm{
      * A stack of vertices for building the hull.
      */
     private GrahamStack stack = new GrahamStack();
+
     /**
      * A set of temporary edges for drawing.
      */
@@ -49,6 +50,7 @@ public class GrahamScan extends Algorithm{
         graph.drawLine(toWrite);
         pause();
     }
+
     /**
      * Draw the final convex hull.
      */
