@@ -1,3 +1,5 @@
+package convexhull;
+
 /**
  * Edge.java
  * Models an edge between two vertices.

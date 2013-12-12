@@ -1,3 +1,4 @@
+package convexhull;
 
 import java.awt.geom.Point2D;
 
@@ -29,8 +30,8 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
     /**
      * Constructor
      *
-     * @param x the x coordinate.
-     * @param y the y coordinate.
+     * @param x    the x coordinate.
+     * @param y    the y coordinate.
      * @param name the vertex name.
      */
     public Vertex(double x, double y, String name) {
@@ -84,11 +85,9 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
     public int compareTo(Vertex o) {
         if (this.getY() > o.getY()) {
             return -1;
-        }
-        else if (this.getY() < o.getY()) {
+        } else if (this.getY() < o.getY()) {
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
     }

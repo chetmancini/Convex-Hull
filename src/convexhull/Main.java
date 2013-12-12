@@ -1,6 +1,7 @@
+package convexhull;
 
-import javax.swing.JOptionPane;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Main.java
@@ -22,19 +23,16 @@ public class Main {
         String val = JOptionPane.showInputDialog("Number of Vertices", "10");
         try {
             numVertices = Integer.parseInt(val);
-        }
-        catch (NumberFormatException nfe) {
+        } catch (NumberFormatException nfe) {
             System.exit(0);
         }
         Object[] possibleValues = {"Graham's Scan", "Jarvis's March"};
         Object selectedValue = JOptionPane
                 .showInputDialog(null, "Choose one", "Input", JOptionPane.PLAIN_MESSAGE, null, possibleValues, possibleValues[0]);
         if (selectedValue.equals("Graham's Scan")) {
-        }
-        else if (selectedValue.equals("Jarvis's March")) {
+        } else if (selectedValue.equals("Jarvis's March")) {
             alg = new JarvisMarch();
-        }
-        else {
+        } else {
             System.exit(0);
         }
         pane.initWindow(WINDOW_SIZE, (String) selectedValue);

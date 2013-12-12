@@ -1,3 +1,4 @@
+package convexhull;
 
 /**
  * Draw.java 
@@ -7,7 +8,6 @@
  *
  * A class to handle drawing.  Double buffered to reduce flicker.
  * Allows saving the displayed graphic as an image.
- *
  *
  * Original Authors: Copyright © 2007, Robert Sedgewick and Kevin Wayne.
  * Edited by Chet Mancini
@@ -20,6 +20,19 @@
  */
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.geom.Arc2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.image.BufferedImage;
+import java.awt.image.DirectColorModel;
+import java.awt.image.WritableRaster;
+import java.io.File;
+import java.io.IOException;
 
 public class Draw implements ActionListener {
 
@@ -148,6 +161,7 @@ public class Draw implements ActionListener {
 
     /**
      * Create the menu bar
+     *
      * @return the window's menu bar
      */
     public JMenuBar createMenuBar() {
@@ -174,6 +188,7 @@ public class Draw implements ActionListener {
 
     /**
      * Get the size of the square
+     *
      * @return the size of the sqare.
      */
     public int getSize() {
@@ -182,6 +197,7 @@ public class Draw implements ActionListener {
 
     /**
      * Get the jlabel
+     *
      * @return the label.
      */
     public JLabel getJLabel() {
@@ -210,6 +226,7 @@ public class Draw implements ActionListener {
 
     /**
      * Set the pen radius
+     *
      * @param r the new pen radius.
      */
     public void setPenRadius(double r) {
@@ -221,6 +238,7 @@ public class Draw implements ActionListener {
 
     /**
      * Set the current pen color
+     *
      * @param color the color to set.
      */
     public void setPenColor(Color color) {
@@ -230,6 +248,7 @@ public class Draw implements ActionListener {
 
     /**
      * Set the current font.
+     *
      * @param f the font to set.
      */
     public void setFont(Font f) {
@@ -284,8 +303,7 @@ public class Draw implements ActionListener {
         double r = penRadius;
         if (r <= 1) {
             pixel(x, y);
-        }
-        else {
+        } else {
             offscreen.fill(new Ellipse2D.Double(x - r / 2, y - r / 2, r, r));
         }
         show();
@@ -294,8 +312,8 @@ public class Draw implements ActionListener {
     /**
      * draw point at (x, y) with the name as text.
      *
-     * @param x the x coordinate.
-     * @param y the y coordinate.
+     * @param x    the x coordinate.
+     * @param y    the y coordinate.
      * @param name the string name of the point.
      */
     public void point(double x, double y, String name) {
@@ -303,8 +321,7 @@ public class Draw implements ActionListener {
         double r = penRadius;
         if (r <= 1) {
             pixel(x, y);
-        }
-        else {
+        } else {
             offscreen.fill(new Ellipse2D.Double(x - r / 2, y - r / 2, r, r));
         }
         show();
@@ -314,8 +331,8 @@ public class Draw implements ActionListener {
     /**
      * draw point at (x, y), but don't show it
      *
-     * @param x the x coordinate.
-     * @param y the y coordinate.
+     * @param x    the x coordinate.
+     * @param y    the y coordinate.
      * @param name the string name of the point.
      */
     public void pointNoShow(double x, double y, String name) {
@@ -323,8 +340,7 @@ public class Draw implements ActionListener {
         double r = penRadius;
         if (r <= 1) {
             pixel(x, y);
-        }
-        else {
+        } else {
             offscreen.fill(new Ellipse2D.Double(x - r / 2, y - r / 2, r, r));
         }
         text(x + 12, y + 12, name);
@@ -333,9 +349,9 @@ public class Draw implements ActionListener {
     /**
      * draw arc of radius r, centered on (x, y), from angle1 to angle2 (in degrees)
      *
-     * @param x the x coordinate
-     * @param y the y coordinate
-     * @param r the radius
+     * @param x      the x coordinate
+     * @param y      the y coordinate
+     * @param r      the radius
      * @param angle1 the first angle
      * @param angle2 the second angle.
      */
@@ -348,8 +364,7 @@ public class Draw implements ActionListener {
         double hs = 2 * r;
         if (ws <= 1 && hs <= 1) {
             pixel(x, y);
-        }
-        else {
+        } else {
             offscreen.draw(new Arc2D.Double(x - ws / 2, y - hs / 2, ws, hs, angle1, angle2 - angle1, Arc2D.OPEN));
         }
         show();
@@ -358,9 +373,9 @@ public class Draw implements ActionListener {
     /**
      * draw arc of radius r, centered on (x, y), from angle1 to angle2 (in degrees), but don't show it
      *
-     * @param x the x coordinate
-     * @param y the y coordinate
-     * @param r the radius
+     * @param x      the x coordinate
+     * @param y      the y coordinate
+     * @param r      the radius
      * @param angle1 the first angle
      * @param angle2 the second angle.
      */
@@ -373,8 +388,7 @@ public class Draw implements ActionListener {
         double hs = 2 * r;
         if (ws <= 1 && hs <= 1) {
             pixel(x, y);
-        }
-        else {
+        } else {
             offscreen.draw(new Arc2D.Double(x - ws / 2, y - hs / 2, ws, hs, angle1, angle2 - angle1, Arc2D.OPEN));
         }
     }
@@ -406,8 +420,7 @@ public class Draw implements ActionListener {
         frame.repaint();
         try {
             Thread.sleep(t);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println("Error sleeping");
         }
     }
@@ -435,8 +448,7 @@ public class Draw implements ActionListener {
         if (suffix.toLowerCase().equals("png")) {
             try {
                 ImageIO.write(offscreenImage, suffix, file);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         } // need to change from ARGB to RGB for jpeg
@@ -453,12 +465,10 @@ public class Draw implements ActionListener {
             BufferedImage rgbBuffer = new BufferedImage(newCM, newRaster, false, null);
             try {
                 ImageIO.write(rgbBuffer, suffix, file);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             JOptionPane.showMessageDialog(frame, "Invalid image file type: " + suffix + ".  Must end in .jpg or .png.",
                     "File Error", JOptionPane.ERROR_MESSAGE);
         }

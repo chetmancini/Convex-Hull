@@ -1,5 +1,7 @@
+package convexhull;
 
-import java.awt.Color;
+import convexhull.Edge;
+import java.awt.*;
 import java.util.Vector;
 
 /**
@@ -9,6 +11,7 @@ import java.util.Vector;
  *
  * @author Chet Mancini Wheaton College, CS 445, Fall 2008 Convex Hull Project Dec 4, 2008
  */
+
 public class JarvisMarch extends Algorithm {
 
     /**
