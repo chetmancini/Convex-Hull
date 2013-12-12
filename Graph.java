@@ -14,24 +14,12 @@ public class Graph {
 
     private static Graph graph;
 
-    /**
-     * Reference to the pane.
-     */
     private Draw pane = Draw.getInstance();
 
-    /**
-     * Vector of verticies
-     */
     public Vector<Vertex> vertices;
 
-    /**
-     * Vector of edges
-     */
     public Vector<Edge> edges;
 
-    /**
-     * Vector of arcs
-     */
     public Vector<Arc> arcs;
 
     /**
@@ -178,7 +166,6 @@ public class Graph {
                 }
             }
             Vertex toInsert = vertices.remove(minSoFar);
-            //toInsert.setName("P" + i);
             vertices.insertElementAt(toInsert, i);
         }
     }
@@ -224,7 +211,6 @@ public class Graph {
             Vertex toAdd = vertices.elementAt(i);
             pane.pointNoShow(toAdd.getX(), toAdd.getY(), toAdd.getName());
         }
-        //pane.show();
     }
 
     /**

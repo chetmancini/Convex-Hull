@@ -21,9 +21,6 @@ public class JarvisMarch extends Algorithm {
      */
     Vector<Vertex> hull = new Vector<Vertex>();
 
-    /**
-     * Contructor. No action.
-     */
     public JarvisMarch() {
     }
 
@@ -63,7 +60,6 @@ public class JarvisMarch extends Algorithm {
 
     /**
      * Get the next vertex going down the left side of the convex hull
-     * <p/>
      * Finds the vertex with the largest (most negative) negative polar angle. Only look at vertices less than the current y
      * coordinate (greater than because flipped). Draw lines to vertices we're looking at in a red line. If a smaller polar angle is
      * found, save that one to return later.

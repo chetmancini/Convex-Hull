@@ -4,12 +4,15 @@ import java.awt.Color;
 
 /**
  * Main.java
- * <p/>
  * Program to run the algorithms.
  *
  * @author Chet Mancini Wheaton College, CS 445, Fall 2008 Convex Hull Project Dec 4, 2008
  */
 public class Main {
+
+    private static final Color PEN_COLOR = Color.BLACK;
+    private static final double PEN_RADIUS = .015;
+    private static final int WINDOW_SIZE = 512;
 
     public static void main(String[] args) {
         Draw pane = Draw.getInstance();
@@ -23,7 +26,6 @@ public class Main {
         catch (NumberFormatException nfe) {
             System.exit(0);
         }
-        int size = 512;
         Object[] possibleValues = {"Graham's Scan", "Jarvis's March"};
         Object selectedValue = JOptionPane
                 .showInputDialog(null, "Choose one", "Input", JOptionPane.PLAIN_MESSAGE, null, possibleValues, possibleValues[0]);
@@ -35,10 +37,10 @@ public class Main {
         else {
             System.exit(0);
         }
-        pane.initWindow(size, (String) selectedValue);
-        graph.setVertices(Generator.generateVertices(numVertices, size, size));
-        pane.setPenRadius(.015);
-        pane.setPenColor(Color.BLACK);
+        pane.initWindow(WINDOW_SIZE, (String) selectedValue);
+        graph.setVertices(Generator.generateVertices(numVertices, WINDOW_SIZE, WINDOW_SIZE));
+        pane.setPenRadius(PEN_RADIUS);
+        pane.setPenColor(PEN_COLOR);
         graph.drawVertices();
         alg.runAlgorithm();
     }

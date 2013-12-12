@@ -3,26 +3,16 @@ import java.awt.geom.Point2D;
 
 /**
  * Vertex.java
- * <p/>
  * Class to represent a vertex on the graph.
  *
  * @author Chet Mancini Wheaton College, CS 445, Fall 2008 Convex Hull Project Dec 4, 2008
  */
 public class Vertex extends Point2D implements Comparable<Vertex> {
 
-    /**
-     * The x coordinate of the vertex.
-     */
     private double x;
 
-    /**
-     * The y coordinate of the vertex.
-     */
     private double y;
 
-    /**
-     * The name of the vertex.
-     */
     private String name;
 
     /**
@@ -34,8 +24,6 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
     public Vertex(double x, double y) {
         this.x = x;
         this.y = y;
-        //ellipse = new Ellipse2D.Double(x-2, y-2, 10, 10);
-
     }
 
     /**
@@ -48,7 +36,6 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
     public Vertex(double x, double y, String name) {
         this.x = x;
         this.y = y;
-        //ellipse = new Ellipse2D.Double(x-2, y-2, 10, 10);
         this.name = name;
     }
 
@@ -62,20 +49,10 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
         return "(" + x + ", " + y + ")";
     }
 
-    /**
-     * Get the x coordinate.
-     *
-     * @return the x coordinate.
-     */
     public double getX() {
         return x;
     }
 
-    /**
-     * Get the y coordinate.
-     *
-     * @return the y coordinate.
-     */
     public double getY() {
         return y;
     }
@@ -91,20 +68,10 @@ public class Vertex extends Point2D implements Comparable<Vertex> {
         this.y = y;
     }
 
-    /**
-     * Set the vertex's name.
-     *
-     * @param name the vertex's name.
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * Get the vertex name.
-     *
-     * @return the Vertex name.
-     */
     public String getName() {
         return name;
     }

@@ -8,14 +8,8 @@
  */
 public class Arc {
 
-    /**
-     * The x coordinate
-     */
     private double x;
 
-    /**
-     * The y coordinate
-     */
     private double y;
 
     /**
