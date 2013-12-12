@@ -24,18 +24,16 @@ import javax.imageio.ImageIO;
 public class Draw implements ActionListener {
 
     /**
-     * Draw is a singleton.  This is the instance.
+     * Draw instance
      */
     private static Draw instance = null;
 
-    /**
-     * The default pen color for drawing.
-     */
+    private static final int DEFAULT_SIZE = 512;
+
+    private static final double DEFAULT_PEN_RADIUS = 0.002;
+
     public final Color DEFAULT_PEN_COLOR = Color.BLACK;
 
-    /**
-     * The default background color.
-     */
     public final Color DEFAULT_CLEAR_COLOR = Color.WHITE;
 
     /**
@@ -43,29 +41,8 @@ public class Draw implements ActionListener {
      */
     private Color penColor;
 
-    /**
-     * The default dimensions for the window.
-     */
-    private static final int DEFAULT_SIZE = 512;
-
-    /**
-     * The default width.
-     */
     private int width = DEFAULT_SIZE;
-
-    /**
-     * The default height.
-     */
     private int height = DEFAULT_SIZE;
-
-    /**
-     * The default pen radius.
-     */
-    private static final double DEFAULT_PEN_RADIUS = 0.002;
-
-    /**
-     * The current pen radius.
-     */
     private double penRadius;
 
     /**
@@ -171,7 +148,6 @@ public class Draw implements ActionListener {
 
     /**
      * Create the menu bar
-     *
      * @return the window's menu bar
      */
     public JMenuBar createMenuBar() {
@@ -198,7 +174,6 @@ public class Draw implements ActionListener {
 
     /**
      * Get the size of the square
-     *
      * @return the size of the sqare.
      */
     public int getSize() {
@@ -207,7 +182,6 @@ public class Draw implements ActionListener {
 
     /**
      * Get the jlabel
-     *
      * @return the label.
      */
     public JLabel getJLabel() {
@@ -236,7 +210,6 @@ public class Draw implements ActionListener {
 
     /**
      * Set the pen radius
-     *
      * @param r the new pen radius.
      */
     public void setPenRadius(double r) {
@@ -248,7 +221,6 @@ public class Draw implements ActionListener {
 
     /**
      * Set the current pen color
-     *
      * @param color the color to set.
      */
     public void setPenColor(Color color) {
@@ -258,7 +230,6 @@ public class Draw implements ActionListener {
 
     /**
      * Set the current font.
-     *
      * @param f the font to set.
      */
     public void setFont(Font f) {
@@ -461,7 +432,6 @@ public class Draw implements ActionListener {
     public void save(String filename) {
         File file = new File(filename);
         String suffix = filename.substring(filename.lastIndexOf('.') + 1);
-        // png files
         if (suffix.toLowerCase().equals("png")) {
             try {
                 ImageIO.write(offscreenImage, suffix, file);
