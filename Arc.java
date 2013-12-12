@@ -4,10 +4,9 @@
  */
 
 /**
- *
  * @author chet
  */
-public class Arc{
+public class Arc {
 
     /**
      * The x coordinate
@@ -36,13 +35,8 @@ public class Arc{
 
     /**
      * Constructor
-     * @param x
-     * @param y
-     * @param r
-     * @param angle1
-     * @param angle2
      */
-    public Arc(double x, double y, int r, double angle1, double angle2){
+    public Arc(double x, double y, int r, double angle1, double angle2) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -50,32 +44,26 @@ public class Arc{
         this.angle2 = angle2;
     }
 
-    /**
-     * Getter method for x.
-     */
-    public double getX(){
+    public double getX() {
         return x;
     }
 
-    /**
-     * Getter method for y.
-     */
-    public double getY(){
+    public double getY() {
         return y;
     }
 
     /**
      * Getter method for radius.
      */
-    public int getR(){
+    public int getR() {
         return r;
     }
 
-    public double getAngle1(){
+    public double getAngle1() {
         return angle1;
     }
 
-    public double getAngle2(){
+    public double getAngle2() {
         return angle2;
     }
 }
