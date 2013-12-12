@@ -1,6 +1,5 @@
 package convexhull;
 
-import convexhull.Edge;
 import java.awt.*;
 import java.util.Vector;
 
