@@ -1,9 +1,5 @@
 package convexhull;
 
-import convexhull.Edge;
-import convexhull.GrahamStack;
-import convexhull.Vertex;
-
 import java.awt.*;
 import java.util.Vector;
 
@@ -64,9 +60,9 @@ public class GrahamScan extends Algorithm {
         pane.setPenRadius(.005);
         pane.setPenColor(Color.BLACK);
         for (int i = vertArray.length - 1; i > 0; i--) {
-            graph.addDispEdge(new Edge(vertArray[i], vertArray[i - 1]));
+            graph.addEdge(new Edge(vertArray[i], vertArray[i - 1]));
         }
-        graph.addDispEdge(new Edge(vertArray[0], vertArray[vertArray.length - 1]));
+        graph.addEdge(new Edge(vertArray[0], vertArray[vertArray.length - 1]));
     }
 
     @Override

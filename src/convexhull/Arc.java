@@ -1,7 +1,7 @@
 package convexhull;
 
 /**
- * @author chet
+ * @author Chet Mancini
  */
 public class Arc {
 
@@ -9,28 +9,16 @@ public class Arc {
 
     private double y;
 
-    /**
-     * The radius.
-     */
-    private int r;
+    private int radius;
 
-    /**
-     * The first angle.
-     */
     private double angle1;
 
-    /**
-     * The second angle.
-     */
     private double angle2;
 
-    /**
-     * Constructor
-     */
-    public Arc(double x, double y, int r, double angle1, double angle2) {
+    public Arc(double x, double y, int radius, double angle1, double angle2) {
         this.x = x;
         this.y = y;
-        this.r = r;
+        this.radius = radius;
         this.angle1 = angle1;
         this.angle2 = angle2;
     }
@@ -43,11 +31,8 @@ public class Arc {
         return y;
     }
 
-    /**
-     * Getter method for radius.
-     */
-    public int getR() {
-        return r;
+    public int getRadius() {
+        return radius;
     }
 
     public double getAngle1() {

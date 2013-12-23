@@ -69,22 +69,11 @@ public class Graph {
     }
 
     /**
-     * Add an edge to the graph but don't display it.
-     *
-     * @param toAdd the edge to add.
-     */
-    public void addEdge(Edge toAdd) {
-        edges.add(toAdd);
-        pane.setPenRadius(.005);
-        pane.lineNoShow(toAdd.getFirst().getX(), toAdd.getFirst().getY(), toAdd.getSecond().getX(), toAdd.getSecond().getY());
-    }
-
-    /**
      * Add an edge to the graph and display it.
      *
      * @param toAdd the edge to add.
      */
-    public void addDispEdge(Edge toAdd) {
+    public void addEdge(Edge toAdd) {
         edges.add(toAdd);
         pane.setPenRadius(.005);
         pane.line(toAdd.getFirst().getX(), toAdd.getFirst().getY(), toAdd.getSecond().getX(), toAdd.getSecond().getY());
@@ -110,21 +99,7 @@ public class Graph {
             pane.line(mini.getFirst().getX(), mini.getFirst().getY(), mini.getSecond().getX(), mini.getSecond().getY());
         }
         pane.setPenRadius(.002);
-        pane.arc(toAdd.getX(), toAdd.getY(), toAdd.getR(), toAdd.getAngle1(), toAdd.getAngle2());
-    }
-
-    /**
-     * Add an arc.
-     *
-     * @param x the x coordinate
-     * @param y the y coordinate
-     * @param r the radius.
-     * @param angle1 the first angle
-     * @param angle2 the second angle.
-     */
-    public void addArc(double x, double y, int r, double angle1, double angle2) {
-        Arc toAdd = new Arc(x, y, r, angle1, angle2);
-        addArc(toAdd);
+        pane.arc(toAdd.getX(), toAdd.getY(), toAdd.getRadius(), toAdd.getAngle1(), toAdd.getAngle2());
     }
 
     /**
@@ -232,7 +207,7 @@ public class Graph {
         pane.setPenRadius(.002);
         for (int i = 0; i < arcs.size(); i++) {
             Arc toAdd = arcs.elementAt(i);
-            pane.arcNoShow(toAdd.getX(), toAdd.getY(), toAdd.getR(), toAdd.getAngle1(), toAdd.getAngle2());
+            pane.arcNoShow(toAdd.getX(), toAdd.getY(), toAdd.getRadius(), toAdd.getAngle1(), toAdd.getAngle2());
         }
     }
 

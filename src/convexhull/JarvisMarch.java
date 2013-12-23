@@ -127,8 +127,8 @@ public class JarvisMarch extends Algorithm {
         do {
             if (rightSide) {
                 Vertex next = nextRight(current);
-                graph.addDispEdge(new Edge(current, next));
-                graph.addArc(current.getX(), current.getY(), 20, 0, Math.toDegrees(current.polarAngleRad(next)));
+                graph.addEdge(new Edge(current, next));
+                graph.addArc(new Arc(current.getX(), current.getY(), 20, 0, Math.toDegrees(current.polarAngleRad(next))));
                 pause();
                 hull.add(next);
                 copy.remove(next);
@@ -139,8 +139,8 @@ public class JarvisMarch extends Algorithm {
             }
             else {
                 Vertex next = nextLeft(current);
-                graph.addDispEdge(new Edge(current, next));
-                graph.addArc(current.getX(), current.getY(), 20, 180, Math.toDegrees(current.polarAngleRad(next)));
+                graph.addEdge(new Edge(current, next));
+                graph.addArc(new Arc(current.getX(), current.getY(), 20, 180, Math.toDegrees(current.polarAngleRad(next))));
                 pause();
                 hull.add(next);
                 copy.remove(next);
